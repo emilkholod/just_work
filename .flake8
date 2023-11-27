@@ -1,0 +1,16 @@
+[flake8]
+format = wemake
+max-line-length = 120
+ignore = D100, D101, D104, D200, D205, D400, D401,
+    P101, P103,
+    N801,
+    Q003,
+    S101, S608,
+    W504,
+    DAR, RST
+inline-quotes = single
+per-file-ignores =
+    mysite/mysite/settings.py: WPS226, WPS407
+    mysite/manage.py: C812,
+        Q000,
+        WPS433, WPS453, WPS326
