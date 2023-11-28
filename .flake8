@@ -1,12 +1,23 @@
 [flake8]
 format = wemake
 max-line-length = 120
+show-source = True
+doctests = False
+exclude =
+    # Trash and cache:
+    .git
+    __pycache__
+    .venv
+    .eggs
+    *.egg
+    temp
 ignore = D100, D101, D104, D200, D205, D400, D401,
     P101, P103,
     N801,
     Q003,
     S101, S608,
     W504,
+    WPS300, WPS306,
     DAR, RST
 inline-quotes = single
 per-file-ignores =
@@ -14,3 +25,4 @@ per-file-ignores =
     mysite/manage.py: C812,
         Q000,
         WPS433, WPS453, WPS326
+    **/migrations/*.py: WPS102
