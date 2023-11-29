@@ -3,4 +3,4 @@ from django.apps import AppConfig
 
 class VideoLibraryConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'video_library'
+    name = 'mysite.video_library'

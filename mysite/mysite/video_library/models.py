@@ -2,6 +2,9 @@ from django.db import models  # noqa: F401
 
 
 class Page(models.Model):
+    class Meta:
+        ordering = ['id']
+
     title = models.CharField()
 
     def __str__(self):
@@ -11,6 +14,7 @@ class Page(models.Model):
 class ContentInfo(models.Model):
     class Meta:
         abstract = True
+        ordering = ['sequence', 'id']
 
     counter = models.IntegerField(default=0)
     title = models.CharField()
