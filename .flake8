@@ -11,7 +11,7 @@ exclude =
     .eggs
     *.egg
     temp
-ignore = D100, D101, D104, D200, D205, D400, D401,
+ignore = D100, D101, D104, D105, D106, D200, D205, D400, D401,
     P101, P103,
     N801,
     Q003,
