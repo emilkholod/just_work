@@ -1,0 +1,21 @@
+- model: video_library.page
+  fields:
+    title: Page By Ivanov
+
+- model: video_library.page
+  fields:
+    title: Page By Petrov
+
+- model: video_library.page
+  fields:
+    title: Page By Sidorov
+
+- model: video_library.audio
+  fields:
+    title: Jingle Bells
+    bitrate: 128
+    page: 2
+
+# TODO:
+# - Add other contents
+# - Make request for page, add pagination with URL (DRF)
