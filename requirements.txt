@@ -1,3 +1,4 @@
+pyyaml
 Django==4.2.7
 psycopg2-binary==2.9.9
-pyyaml
+djangorestframework==3.14.0
