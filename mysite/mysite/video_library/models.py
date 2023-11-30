@@ -1,4 +1,4 @@
-from django.db import models  # noqa: F401
+from django.db import models
 
 
 class Page(models.Model):
@@ -11,7 +11,7 @@ class Page(models.Model):
         return self.title
 
 
-class ContentInfo(models.Model):
+class AbstractContentInfo(models.Model):
     class Meta:
         abstract = True
         ordering = ['sequence', 'id']
@@ -25,14 +25,14 @@ class ContentInfo(models.Model):
         return self.title
 
 
-class Video(ContentInfo):
+class Video(AbstractContentInfo):
     video_url = models.URLField()
     subtitles_url = models.URLField()
 
 
-class Audio(ContentInfo):
+class Audio(AbstractContentInfo):
     bitrate = models.IntegerField(default=0)
 
 
-class Text(ContentInfo):
+class Text(AbstractContentInfo):
     text = models.TextField()

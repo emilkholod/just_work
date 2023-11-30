@@ -13,11 +13,11 @@ exclude =
     temp
 ignore = D100, D101, D104, D105, D106, D200, D205, D400, D401,
     P101, P103,
-    N801,
+    N801, N811,
     Q003,
     S101, S608,
     W504,
-    WPS300, WPS306,
+    WPS110, WPS300, WPS306, WPS407, WPS602, WPS615,
     DAR, RST
 inline-quotes = single
 per-file-ignores =
