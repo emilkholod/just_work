@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if [ "$DATABASE" = "postgres" ]; then
     echo "Waiting for postgres..."
@@ -10,11 +10,13 @@ if [ "$DATABASE" = "postgres" ]; then
     echo "PostgreSQL started"
 fi
 
-# Make migrations and migrate the database.
-echo "Making migrations and migrating the database"
-python manage.py migrate video_library zero
-python manage.py makemigrations --noinput
-python manage.py migrate --noinput
-python manage.py loaddata initial_data.yaml
+if [[ "$@" != *"manage.py test"* ]]; then
+    # Make migrations and migrate the database.
+    echo "Making migrations and migrating the database"
+    python manage.py migrate video_library zero
+    python manage.py makemigrations --noinput
+    python manage.py migrate --noinput
+    python manage.py loaddata initial_data.yaml
+fi
 
 exec "$@"

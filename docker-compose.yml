@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-  web:
+  web: &web
     build: .
     command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
     tty: true
@@ -19,6 +19,10 @@ services:
       - wdb
     volumes:
       - "./mysite:/mysite"
+
+  autotests:
+    <<: *web
+    command: ["python", "manage.py", "test", "-v", "2"]
 
   db:
     image: postgres:15
