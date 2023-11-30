@@ -15,7 +15,15 @@
     title: Jingle Bells
     bitrate: 128
     page: 2
+    sequence: 5
+
+- model: video_library.video
+  fields:
+    title: Home Alone
+    video_url: home-alone.com/video
+    subtitles_url: home-alone.com/subtitles
+    page: 2
+    sequence: 10
 
 # TODO:
 # - Add other contents
-# - Make request for page, add pagination with URL (DRF)

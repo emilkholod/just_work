@@ -26,3 +26,4 @@ per-file-ignores =
         Q000,
         WPS433, WPS453, WPS326
     **/migrations/*.py: WPS102
+    **/tests.py: D102
