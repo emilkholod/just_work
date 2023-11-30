@@ -8,22 +8,35 @@ services:
     stdin_open: true
     env_file:
       - project.env
+    environment:
+      # DEV
+      - WDB_NO_BROWSER_AUTO_OPEN=True
+      - WDB_SOCKET_SERVER=wdb
     ports:
       - 8000:8000
     depends_on:
       - db
+      - wdb
     volumes:
       - "./mysite:/mysite"
 
   db:
     image: postgres:15
-    restart: always
     env_file:
       - project.env
     ports:
       - 5432:5432
     volumes:
       - postgres-data:/var/lib/postgresql/data
+      - postgres-hisotry:/root
+
+
+  # DEV
+  wdb:
+    image: kozea/wdb:3.2.5
+    ports:
+      - 1984:1984
 
 volumes:
   postgres-data:
+  postgres-hisotry:
