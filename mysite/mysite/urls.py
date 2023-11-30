@@ -19,7 +19,7 @@ from django.urls import include, path
 
 from rest_framework import routers
 
-from .video_library import views
+from .blog import views
 
 api_router = routers.DefaultRouter()
 api_router.register('pages', views.PageViewSet)

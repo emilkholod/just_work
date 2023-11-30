@@ -1,23 +1,23 @@
-- model: video_library.page
+- model: blog.page
   fields:
     title: Page By Ivanov
 
-- model: video_library.page
+- model: blog.page
   fields:
     title: Page By Petrov
 
-- model: video_library.page
+- model: blog.page
   fields:
     title: Page By Sidorov
 
-- model: video_library.audio
+- model: blog.audio
   fields:
     title: Jingle Bells
     bitrate: 128
     page: 2
     sequence: 5
 
-- model: video_library.video
+- model: blog.video
   fields:
     title: Home Alone
     video_url: home-alone.com/video
