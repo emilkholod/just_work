@@ -18,7 +18,7 @@ class AbstractContentInfo(models.Model):
 
     counter = models.IntegerField(default=0)
     title = models.CharField()
-    page = models.ForeignKey(Page, on_delete=models.CASCADE)
+    page = models.ForeignKey(Page, on_delete=models.CASCADE, null=True)
     sequence = models.PositiveSmallIntegerField(default=0)
 
     def __str__(self):

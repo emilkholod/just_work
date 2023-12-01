@@ -8,8 +8,6 @@ client = APIClient()
 
 # Create your tests here.
 class TestAPI(TestCase):
-    fixtures = ['initial_data.yaml']
-
     def test_page_list(self):
         response = client.get('/api/pages/')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
