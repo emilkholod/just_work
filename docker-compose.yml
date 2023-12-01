@@ -16,6 +16,7 @@ services:
       # DEV
       - WDB_NO_BROWSER_AUTO_OPEN=True
       - WDB_SOCKET_SERVER=wdb
+      - SQL_LOG_LEVEL=INFO
     ports:
       - 8000:8000
     depends_on:

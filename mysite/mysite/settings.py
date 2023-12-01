@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 from mysite.keyconfig import Database
@@ -133,4 +133,43 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
+}
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'filters': {
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+    },
+    'formatters': {
+        'base': {
+            'format': '[{asctime}] {levelname} {name}: {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'console_info': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'base',
+            'level': 'INFO',
+        },
+        'console_debug': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'base',
+            'level': 'DEBUG',
+            'filters': ['require_debug_true'],
+        },
+    },
+    'root': {
+        'handlers': ['console_info'],
+        'level': 'INFO',
+    },
+    'loggers': {
+        'django.db.backends': {
+            'handlers': ['console_debug'],
+            'level': os.getenv('SQL_LOG_LEVEL', 'INFO'),
+        },
+    },
 }
