@@ -17,6 +17,13 @@
     page: 2
     sequence: 5
 
+- model: blog.audio
+  fields:
+    title: Jingle Bells 2
+    bitrate: 128
+    page: 2
+    sequence: 10
+
 - model: blog.video
   fields:
     title: Home Alone

@@ -18,7 +18,7 @@ class TestAPI(TestCase):
     def test_page_instance(self):
         response = client.get('/api/pages/2/')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(response.json()['content']), 2)
+        self.assertEqual(len(response.json()['content']), 3)
 
     def test_content_counter(self):
         client.get('/api/pages/2/')
