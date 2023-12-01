@@ -13,11 +13,11 @@ exclude =
     temp
 ignore = D100, D101, D104, D105, D106, D200, D205, D400, D401,
     P101, P103,
-    N801, N811,
+    N801, N806, N811,
     Q003,
     S101, S608,
     W504,
-    WPS110, WPS300, WPS306, WPS407, WPS602, WPS615,
+    WPS110, WPS210, WPS300, WPS306, WPS407, WPS432, WPS602, WPS615,
     DAR, RST
 inline-quotes = single
 per-file-ignores =
@@ -26,4 +26,5 @@ per-file-ignores =
         Q000,
         WPS433, WPS453, WPS326
     **/migrations/*.py: WPS102
+    **/migrations/*_initial.py: I, WPS
     **/tests.py: D102
